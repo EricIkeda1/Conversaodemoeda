@@ -1,73 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-BR" >
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dashboard Profissional - Conversor de Moedas</title>
+  <title>Conversor de Moedas</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
   <link rel="stylesheet" href="../style/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header class="header">
+  <main class="app">
     <h1>Conversor de Moedas</h1>
-    <p class="subtitle">Converta valores em Real (BRL) para várias moedas.</p>
-  </header>
+    <p class="subtitle">
+      Converta Real (BRL) para várias moedas<br>
+      e visualize dados no gráfico.
+    </p>
 
-  <main class="container">
-    <section class="input-section card">
-      <label for="real" class="input-label">Valor em Real (R$):</label>
-      <input type="number" id="real" value="1" min="0" step="any" class="input-field" />
+    <section class="card input-card">
+      <label for="real">Valor em Real (R$):</label>
+      <div class="input-row">
+        <input type="number" id="real" value="1" min="0" step="any">
+        <button id="btn-reset">Limpar</button>
+      </div>
     </section>
 
-    <section class="results-section">
-      <div class="card result-card usd">
-        <div class="icon"><i class="fa-solid fa-dollar-sign"></i></div>
-        <div>
-          <div class="label">Dólar Americano (USD)</div>
-          <div id="dolar" class="value">0.00</div>
-        </div>
+    <section class="card results-card">
+      <div class="currency">
+        <i class="fa-solid fa-dollar-sign icon usd"></i>
+        <span>Dólar Americano (USD)</span>
+        <strong id="dolar">0,00</strong>
       </div>
+      <div class="currency">
+        <i class="fa-solid fa-euro-sign icon eur"></i>
+        <span>Euro (EUR)</span>
+        <strong id="euro">0,00</strong>
+      </div>
+      <div class="currency">
+        <i class="fa-solid fa-pound-sign icon gbp"></i>
+        <span>Libra Esterlina (GBP)</span>
+        <strong id="libra">0,00</strong>
+      </div>
+      <div class="currency">
+        <i class="fa-solid fa-yen-sign icon jpy"></i>
+        <span>Iene Japonês (JPY)</span>
+        <strong id="iene">0,00</strong>
+      </div>
+    </section>
 
-      <div class="card result-card eur">
-        <div class="icon"><i class="fa-solid fa-euro-sign"></i></div>
-        <div>
-          <div class="label">Euro (EUR)</div>
-          <div id="euro" class="value">0.00</div>
-        </div>
-      </div>
-
-      <div class="card result-card gbp">
-        <div class="icon"><i class="fa-solid fa-pound-sign"></i></div>
-        <div>
-          <div class="label">Libra Esterlina (GBP)</div>
-          <div id="libra" class="value">0.00</div>
-        </div>
-      </div>
-
-      <div class="card result-card jpy">
-        <div class="icon"><i class="fa-solid fa-yen-sign"></i></div>
-        <div>
-          <div class="label">Iene Japonês (JPY)</div>
-          <div id="iene" class="value">0.00</div>
-        </div>
-      </div>
-
-      <div class="card result-card aud">
-        <div class="icon"><i class="fa-brands fa-audible"></i></div>
-        <div>
-          <div class="label">Dólar Australiano (AUD)</div>
-          <div id="australiano" class="value">0.00</div>
-        </div>
-      </div>
+    <section class="card chart-card">
+      <p class="chart-title">
+        Simulação da Variação da Taxa de Câmbio<br>(últimos 7 dias)
+      </p>
+      <canvas id="taxasChart"></canvas>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>© 2025 Eric Yuji Ikeda | ericikeda2002@gmail.com</p>
-  </footer>
-
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  
   <script src="../js/conversao.js"></script>
+  <script src="../Dashboard/dashboard.js"></script>
+
+  <script>
+    document.getElementById('btn-reset').addEventListener('click', () => {
+      document.getElementById('real').value = '';
+    });
+  </script>
 </body>
 </html>

@@ -11,7 +11,8 @@ async function buscarTaxas() {
 }
 
 async function converterBRL() {
-  const real = parseFloat(document.getElementById('real').value) || 0;
+  const realInput = document.getElementById('real');
+  const real = parseFloat(realInput.value) || 0;
   const taxas = await buscarTaxas();
   if (!taxas) return;
 
@@ -21,9 +22,11 @@ async function converterBRL() {
   document.getElementById('euro').textContent = (real / taxaBRL * taxas.EUR).toFixed(2);
   document.getElementById('libra').textContent = (real / taxaBRL * taxas.GBP).toFixed(2);
   document.getElementById('iene').textContent = (real / taxaBRL * taxas.JPY).toFixed(2);
-  document.getElementById('australiano').textContent = (real / taxaBRL * taxas.AUD).toFixed(2);
+
 }
 
-document.getElementById('real').addEventListener('input', converterBRL);
-
-converterBRL();
+window.addEventListener('DOMContentLoaded', () => {
+  const realInput = document.getElementById('real');
+  realInput.addEventListener('input', converterBRL);
+  converterBRL(); 
+});
