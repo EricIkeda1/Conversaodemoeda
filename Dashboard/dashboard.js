@@ -1,4 +1,4 @@
-let chart;
+let chart;//
 
 function gerarDadosParaGrafico(real) {
   const dias = [];
