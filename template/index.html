@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conversor de Moedas Completo</title>
+  <link rel="stylesheet" href="../style/style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Conversor de Moedas</h1>
+    <p class="descricao">
+      Converta valores de <strong>Real Brasileiro (BRL)</strong> para outras moedas como <strong>Dólar Americano (USD)</strong> e <strong>Euro (EUR)</strong>.
+      As taxas usadas são baseadas em valores aproximados de mercado em 2025.
+    </p>
+  </header>
+
+  <main>
+    <section class="conversor">
+      <table>
+        <caption>Conversão de Moedas (Real Brasileiro)</caption>
+        <thead>
+          <tr>
+            <th>Real (R$)</th>
+            <th>Dólar Americano (USD)</th>
+            <th>Euro (EUR)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="number" id="real" value="1" min="0" step="any" /></td>
+            <td id="dolar">0.20</td>
+            <td id="euro">0.18</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="atualizacao">Última atualização: 01/08/2025</p>
+    </section>
+
+    <section class="info-adicional">
+      <h2>Sobre as Moedas</h2>
+      <p><strong>Real Brasileiro (BRL):</strong> A moeda oficial do Brasil desde 1994, símbolo: <code>R$</code>.</p>
+      <p><strong>Dólar Americano (USD):</strong> A moeda oficial dos Estados Unidos e uma das mais usadas mundialmente.</p>
+      <p><strong>Euro (EUR):</strong> A moeda oficial da zona do Euro, utilizada por muitos países europeus.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Desenvolvido por Eric Yuji Ikeda - ericikeda2002@gmail.com</p>
+  </footer>
+
+  <script src="../js/conversao.js"></script>
+</body>
+</html>
