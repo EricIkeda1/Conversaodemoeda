@@ -1,4 +1,3 @@
-/* Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,7 +6,7 @@
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f5f7fa;
+  background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
   color: #1f2937;
   min-height: 100vh;
   display: flex;
@@ -18,25 +17,29 @@ body {
 .header {
   padding: 3rem 2rem 2rem;
   text-align: center;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid #cbd5e1;
+  background-color: white;
+  box-shadow: 0 4px 6px rgb(0 0 0 / 0.05);
+  border-radius: 0 0 20px 20px;
 }
 
 .header h1 {
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 2.75rem;
   margin-bottom: 0.5rem;
   color: #111827;
+  letter-spacing: 1.2px;
 }
 
 .subtitle {
-  color: #4b5563;
+  color: #64748b;
   font-size: 1.125rem;
   font-weight: 400;
 }
 
 .container {
   max-width: 960px;
-  margin: 3rem auto;
+  margin: 3rem auto 4rem;
   padding: 0 1rem;
   display: flex;
   gap: 2rem;
@@ -46,19 +49,19 @@ body {
 
 .card {
   background-color: white;
-  border-radius: 0.75rem;
-  box-shadow: 0 6px 12px rgb(0 0 0 / 0.1);
-  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 0.08);
+  padding: 2rem 2.5rem;
   flex: 1 1 280px;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
+  gap: 2rem;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 24px rgb(0 0 0 / 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgb(0 0 0 / 0.12);
 }
 
 .input-section {
@@ -68,52 +71,70 @@ body {
 
 .input-label {
   font-weight: 600;
-  font-size: 1.25rem;
-  margin-bottom: 1rem;
-  color: #374151;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+  color: #334155;
   align-self: flex-start;
+  letter-spacing: 0.05em;
 }
 
 .input-field {
   width: 100%;
-  padding: 0.85rem 1rem;
-  font-size: 1.3rem;
-  border: 1.5px solid #d1d5db;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  color: #111827;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  padding: 1rem 1.2rem;
+  font-size: 1.4rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  color: #1e293b;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  background-color: #f8fafc;
+}
+
+.input-field::placeholder {
+  color: #94a3b8;
 }
 
 .input-field:focus {
-  border-color: #2563eb;
+  border-color: #3b82f6;
   outline: none;
-  box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.6);
+  background-color: white;
 }
 
 .results-section {
   max-width: 600px;
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
 }
 
 .result-card {
   flex: 1 1 260px;
   text-align: left;
-  padding: 1.8rem 2rem;
+  padding: 2rem 2.5rem;
   cursor: default;
   color: #111827;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background: linear-gradient(135deg, #f9fafb, #e0e7ff);
+  box-shadow: 0 6px 16px rgb(67 56 202 / 0.15);
+  transition: box-shadow 0.3s ease;
+}
+
+.result-card:hover {
+  box-shadow: 0 12px 28px rgb(67 56 202 / 0.3);
 }
 
 .icon {
-  font-size: 3.5rem;
-  color: #2563eb;
-  min-width: 56px;
+  font-size: 4rem;
+  min-width: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
+  filter: drop-shadow(0 1px 1px rgb(0 0 0 / 0.15));
 }
 
 .usd .icon {
@@ -121,42 +142,46 @@ body {
 }
 
 .eur .icon {
-  color: #6b46c1;
+  color: #7c3aed;
 }
 
 .gbp .icon {
-  color: #d69e2e;
+  color: #f59e0b;
 }
 
 .jpy .icon {
-  color: #dd6b20;
+  color: #ea580c;
 }
 
 .aud .icon {
-  color: #2f855a;
+  color: #16a34a;
 }
 
 .label {
   font-weight: 700;
-  font-size: 1.25rem;
-  margin-bottom: 0.3rem;
+  font-size: 1.4rem;
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.03em;
 }
 
 .value {
-  font-size: 2.25rem;
-  font-weight: 800;
-  color: #1a202c;
+  font-size: 2.75rem;
+  font-weight: 900;
+  color: #1e293b;
+  letter-spacing: 0.05em;
 }
 
 .footer {
-  padding: 1.5rem 1rem;
+  padding: 2rem 1rem;
   text-align: center;
   font-size: 0.875rem;
-  color: #6b7280;
-  border-top: 1px solid #e2e8f0;
+  color: #64748b;
+  border-top: 1px solid #cbd5e1;
+  background-color: white;
+  box-shadow: 0 -4px 6px rgb(0 0 0 / 0.03);
+  font-style: italic;
+  letter-spacing: 0.04em;
 }
-
-/* Responsividade */
 
 @media (max-width: 768px) {
   .container {
