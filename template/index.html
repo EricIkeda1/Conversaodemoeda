@@ -1,54 +1,71 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Conversor de Moedas Completo</title>
+  <title>Dashboard Profissional - Conversor de Moedas</title>
   <link rel="stylesheet" href="../style/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
 </head>
 <body>
 
-  <header>
+  <header class="header">
     <h1>Conversor de Moedas</h1>
-    <p class="descricao">
-      Converta valores de <strong>Real Brasileiro (BRL)</strong> para outras moedas como <strong>Dólar Americano (USD)</strong> e <strong>Euro (EUR)</strong>.
-      As taxas usadas são baseadas em valores aproximados de mercado em 2025.
-    </p>
+    <p class="subtitle">Converta valores em Real (BRL) para várias moedas.</p>
   </header>
 
-  <main>
-    <section class="conversor">
-      <table>
-        <caption>Conversão de Moedas (Real Brasileiro)</caption>
-        <thead>
-          <tr>
-            <th>Real (R$)</th>
-            <th>Dólar Americano (USD)</th>
-            <th>Euro (EUR)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><input type="number" id="real" value="1" min="0" step="any" /></td>
-            <td id="dolar">0.20</td>
-            <td id="euro">0.18</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <p class="atualizacao">Última atualização: 01/08/2025</p>
+  <main class="container">
+    <section class="input-section card">
+      <label for="real" class="input-label">Valor em Real (R$):</label>
+      <input type="number" id="real" value="1" min="0" step="any" class="input-field" />
     </section>
 
-    <section class="info-adicional">
-      <h2>Sobre as Moedas</h2>
-      <p><strong>Real Brasileiro (BRL):</strong> A moeda oficial do Brasil desde 1994, símbolo: <code>R$</code>.</p>
-      <p><strong>Dólar Americano (USD):</strong> A moeda oficial dos Estados Unidos e uma das mais usadas mundialmente.</p>
-      <p><strong>Euro (EUR):</strong> A moeda oficial da zona do Euro, utilizada por muitos países europeus.</p>
+    <section class="results-section">
+      <div class="card result-card usd">
+        <div class="icon"><i class="fa-solid fa-dollar-sign"></i></div>
+        <div>
+          <div class="label">Dólar Americano (USD)</div>
+          <div id="dolar" class="value">0.00</div>
+        </div>
+      </div>
+
+      <div class="card result-card eur">
+        <div class="icon"><i class="fa-solid fa-euro-sign"></i></div>
+        <div>
+          <div class="label">Euro (EUR)</div>
+          <div id="euro" class="value">0.00</div>
+        </div>
+      </div>
+
+      <div class="card result-card gbp">
+        <div class="icon"><i class="fa-solid fa-pound-sign"></i></div>
+        <div>
+          <div class="label">Libra Esterlina (GBP)</div>
+          <div id="libra" class="value">0.00</div>
+        </div>
+      </div>
+
+      <div class="card result-card jpy">
+        <div class="icon"><i class="fa-solid fa-yen-sign"></i></div>
+        <div>
+          <div class="label">Iene Japonês (JPY)</div>
+          <div id="iene" class="value">0.00</div>
+        </div>
+      </div>
+
+      <div class="card result-card aud">
+        <div class="icon"><i class="fa-brands fa-audible"></i></div>
+        <div>
+          <div class="label">Dólar Australiano (AUD)</div>
+          <div id="australiano" class="value">0.00</div>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer>
-    <p>Desenvolvido por Eric Yuji Ikeda - ericikeda2002@gmail.com</p>
+  <footer class="footer">
+    <p>© 2025 Eric Yuji Ikeda | ericikeda2002@gmail.com</p>
   </footer>
 
   <script src="../js/conversao.js"></script>
